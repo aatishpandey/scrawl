@@ -1,13 +1,14 @@
 import { Routes, Route } from "react-router-dom";
+import { NotesList } from "../components/note/NotesList";
 import { RequiresAuth } from "../components/requiresAuth/requiresAuth";
 import { MockAPI } from "../MockAPI";
 import { ErrorPage } from "../pages/404-page/errorpage";
-import { Archive, Label, LoginPage, Notes, Profile, SignupPage, Trash } from "../pages/index"
+import { Archive, Label, LoginPage, Profile, SignupPage, Trash } from "../pages/index"
 
 function PageRoutes() {
     return (
         <Routes>
-            <Route path="/" element={<RequiresAuth><Notes /></RequiresAuth>} />
+            <Route path="/" element={<RequiresAuth><NotesList /></RequiresAuth>} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignupPage />} />
             <Route path="*" element={<ErrorPage />} />
